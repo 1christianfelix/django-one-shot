@@ -7,3 +7,14 @@ class TodoList(models.Model):
     # this is a class, remember what classes look like!
     name = models.CharField(max_length=150)
     created_on = models.DateTimeField(auto_now_add=True)
+
+
+class TodoItem(models.Model):
+    task = models.CharField(max_length=150)
+    due_date = models.DateTimeField(null=True, blank=True)
+    is_completed = models.BooleanField(default=False)
+    list = models.ForeignKey(
+        "TodoList",
+        related_name="items",  # for backwards relation.
+        on_delete=models.CASCADE
+    )
