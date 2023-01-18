@@ -7,6 +7,7 @@ from todos.models import TodoList
 @admin.register(TodoList)
 class TodoListAdmin(admin.ModelAdmin):
     list = (
+        'id',
         'name',
         'created_on'
     )
