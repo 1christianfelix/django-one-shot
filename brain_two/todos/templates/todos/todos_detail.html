@@ -9,17 +9,18 @@
   <body>
     <main>
       <div>
-        <h1>My Lists</h1>
+        <h1>{{ todo_items.name }}</h1>
+        <h2>Tasks</h2>
         <table>
           <thead>
-            <th>Name</th>
-            <th>Number of items</th>
+            <th>Task</th>
+            <th>Due date</th>
           </thead>
           <tbody>
-            {% for list in todo_lists %}
+            {% for item in todo_items.items.all %}
             <tr>
-              <td><a href="{% url 'todo_list_detail' list.id %}">{{ list.name }}</a></td>
-              <td>{{ list.items.all|length|default:'' }}</td>
+              <td>{{ item.task }}</td>
+              <td>{{ item.due_date|date:"M j, o" }}</td>
             </tr>
             {% endfor %}
           </tbody>

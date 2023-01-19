@@ -11,3 +11,11 @@ def todo_list_list(request):
         'todo_lists': todo_lists
     }
     return render(request, "todos/todos.html", context)
+
+
+def todo_list_detail(request, id):
+    todo_list = get_object_or_404(TodoList, id=id)
+    context = {
+        'todo_items': todo_list
+    }
+    return render(request, 'todos/todos_detail.html', context)
