@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,15 +9,13 @@
   <body>
     <header></header>
     <main>
-      <main>
-        <div>
-          <h1>Update list</h1>
-          <form method="post">
-            {% csrf_token %} {{ form.as_p }}
-            <button>Update</button>
-          </form>
-        </div>
-      </main>
+      <div>
+        <h1>Update list</h1>
+        <form method="post">
+          {% csrf_token %} {{ form.as_p }}
+          <button>Update</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>

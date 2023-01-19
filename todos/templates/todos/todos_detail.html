@@ -21,15 +21,17 @@
         <h2>Tasks</h2>
         <table>
           <thead>
-            <th>Task</th>
-            <th>Due date</th>
+            <tr>
+              <th>Task</th>
+              <th>Due date</th>
+            </tr>
           </thead>
           <tbody>
             {% for item in todo_items.items.all %}
-            <tr>
-              <td><a href="{% url 'todo_item_update' item.id%}">{{ item.task }}</a></td>
-              <td>{{ item.due_date|date:"M j, o" }}</td>
-            </tr>
+              <tr>
+                <td><a href="{% url 'todo_item_update' item.id%}">{{ item.task }}</a></td>
+                <td>{{ item.due_date|date:"M j, o" }}</td>
+              </tr>
             {% endfor %}
           </tbody>
         </table>

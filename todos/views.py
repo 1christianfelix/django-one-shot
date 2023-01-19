@@ -7,7 +7,7 @@ from todos.forms import TodoListForm, TodoItemForm
 
 def todo_list_list(request):
     todo_lists = TodoList.objects.all()
-    print(todo_lists)
+    # print(todo_lists)
     context = {
         'todo_lists': todo_lists
     }
@@ -40,7 +40,7 @@ def todo_list_create(request):
 
 def todo_list_update(request, id):
     todo_list = get_object_or_404(TodoList, id=id)
-    print(todo_list)
+    # print(todo_list)
     if request.method == "POST":
         # THIS IS IMPRTnt
         form = TodoListForm(request.POST, instance=todo_list)
